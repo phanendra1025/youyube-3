@@ -7,6 +7,9 @@ export const PopupMenuContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: ${props => (props.bgColor ? '#212121' : '#ffffff')};
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `
 export const NavItemMenuButton = styled.button`
   background-color: transparent;

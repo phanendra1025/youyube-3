@@ -35,8 +35,8 @@ class Navbar extends Component {
           const websiteLogo = darkTheme
             ? 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-dark-theme-img.png'
             : 'https://assets.ccbp.in/frontend/react-js/nxt-watch-logo-light-theme-img.png'
-          const iconsColor = darkTheme ? '#ffffff' : '#0f0f0f'
-          const backgroundColor = darkTheme ? '#0f0f0f' : '#ffffff'
+          const iconsColor = darkTheme ? '#ffffff' : '#212121'
+          const backgroundColor = darkTheme ? '#181818' : '#ffffff'
           const logout = () => {
             const {history} = this.props
             Cookies.remove('jwt_token')

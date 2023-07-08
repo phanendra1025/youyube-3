@@ -20,7 +20,7 @@ export const NavContentContainer = styled.div`
   }
 `
 export const WebsiteLogo = styled.img`
-  width: 100px;
+  width: 110px;
   height: 30px;
   @media screen and (min-width: 768px) {
     width: 120px;
