@@ -5,7 +5,7 @@ export const ThumbnailItem = styled.li`
   width: 100%;
   margin: 15px;
   @media screen and (min-width: 576px) {
-    max-width: 300px;
+    max-width: 280px;
   }
 `
 export const ThumbnailContainer = styled.div`

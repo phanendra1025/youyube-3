@@ -1,7 +1,15 @@
 import styled from 'styled-components'
 
-export const LeftNavBarAndHomeContainer = styled.div`
+export const LeftNavbarAndHomeRouteContainer = styled.div`
   display: flex;
+  width: 100%;
+`
+
+export const HomeRouteContainer = styled.div`
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `
 
 export const HomeContainer = styled.div`
@@ -10,6 +18,9 @@ export const HomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   background-color: ${props => (props.darkMode ? '#181818' : '#f4f4f4')};
+  @media screen and (min-width: 768px) {
+    padding: 20px;
+  }
 `
 export const SearchContainer = styled.div`
   width: 100%;
@@ -18,12 +29,12 @@ export const SearchContainer = styled.div`
 export const SearchBarContainer = styled.div`
   width: 100%;
   min-width: 350px;
-  max-width: 650px;
+  max-width: 500px;
   display: flex;
   align-items: center;
   background-color: ${props => (props.darkMode ? '#212121' : '#f1f1f1')};
   height: 35px;
-  border: 1.5px solid ${props => (props.darkMode ? ' #909090' : '#ebebeb')};
+  border: 1px solid ${props => (props.darkMode ? ' #909090' : '#ebebeb')};
   align-self: flex-start;
 `
 export const VideosSearchBar = styled.input`

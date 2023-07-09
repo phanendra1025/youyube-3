@@ -6,7 +6,6 @@ import Navbar from '../Navbar'
 import BannerItem from '../BannerItem'
 import NxtWatchContext from '../../Context/NxtWatchContext'
 import {
-  LeftNavBarAndHomeContainer,
   HomeContainer,
   SearchBarContainer,
   VideosSearchBar,
@@ -19,6 +18,8 @@ import {
   NoResultHeading,
   NoResultMessage,
   NoResultRetryButton,
+  HomeRouteContainer,
+  LeftNavbarAndHomeRouteContainer,
 } from './styledComponents'
 import VideoThumbnailItem from '../VideoThumbnailItem'
 import LeftNavBar from '../LeftNavbar'
@@ -174,10 +175,9 @@ class HomeRoute extends Component {
           return (
             <>
               <Navbar />
-              <LeftNavBarAndHomeContainer>
+              <LeftNavbarAndHomeRouteContainer>
                 <LeftNavBar />
-                <>
-                  {' '}
+                <HomeRouteContainer>
                   <BannerItem />
                   <HomeContainer darkMode={darkTheme}>
                     <SearchContainer>
@@ -204,8 +204,8 @@ class HomeRoute extends Component {
                       {this.renderTheVideosContainer()}
                     </VideosContainer>
                   </HomeContainer>
-                </>
-              </LeftNavBarAndHomeContainer>
+                </HomeRouteContainer>
+              </LeftNavbarAndHomeRouteContainer>
             </>
           )
         }}

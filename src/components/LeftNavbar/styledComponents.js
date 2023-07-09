@@ -1,15 +1,11 @@
 import styled from 'styled-components'
 
-export const LeftNavbar = styled.nav`
-  @media screen and (max-width: 576px) {
+export const LeftNavbarContainer = styled.nav`
+  width: 25%;
+  background-color: ${props => (props.darkMode ? ' #212121' : '#ffffff')};
+  width: 240px;
+  @media screen and (max-width: 768px) {
     display: none;
-  }
-  @media screen and (min-width: 576px) {
-    display: none;
-  }
-  @media screen and (min-width: 768px) {
-    height: 90vh;
-    width: 250px;
   }
 `
 export const LeftNavbarContentContainer = styled.div`

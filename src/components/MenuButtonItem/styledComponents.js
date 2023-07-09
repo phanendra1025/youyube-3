@@ -5,12 +5,13 @@ export const PopupListItem = styled.li`
   width: 100vw;
   display: flex;
   align-items: center;
+  padding: 0px;
   margin: 0px;
   justify-content: center;
   background-color: ${props => {
     if (props.bgColor) {
       if (props.isDark) {
-        return ' #606060'
+        return '  #383838'
       }
       return ' #e2e8f0'
     }
@@ -32,7 +33,7 @@ export const MenuDetailsButton = styled.button`
 
 export const PopupMenuName = styled.p`
   font-family: 'Roboto';
-  font-size: 19px;
+  font-size: 15px;
   font-weight: ${props => (props.fontBgColor ? 'bold' : 400)};
   margin: 0px;
   text-align: left;

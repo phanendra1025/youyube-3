@@ -1,12 +1,13 @@
 import {Component} from 'react'
-import NxtWatchContext from '../../Context/NxtWatchContext'
 import {
+  LeftNavbarContainer,
   LeftNavbarContentContainer,
   LeftNavbarMenuContainer,
 } from './styledComponents'
 import MenuButtonItem from '../MenuButtonItem'
+import NxtWatchContext from '../../Context/NxtWatchContext'
 
-const leftNavbarMenuItemsList = [
+const LeftMenuItemsList = [
   {
     menuId: 'HOME',
     displayText: 'Home',
@@ -27,41 +28,38 @@ const leftNavbarMenuItemsList = [
 
 class LeftNavBar extends Component {
   state = {
-    activeLeftNavbarMenuButtonId: leftNavbarMenuItemsList[0].menuId,
+    activeLeftMenuButtonId: LeftMenuItemsList[0].menuId,
   }
 
   changeActiveMenuButton = id => {
-    const filterList = leftNavbarMenuItemsList.filter(
+    const filterList = LeftMenuItemsList.filter(
       eachItem => eachItem.menuId === id,
     )
     const menu = filterList[0]
-    this.setState({activeLeftNavbarMenuButtonId: menu.menuId})
+    this.setState({activeLeftMenuButtonId: menu.menuId})
   }
 
   render() {
-    const {activeLeftNavbarMenuButtonId} = this.state
+    const {activeLeftMenuButtonId} = this.state
     return (
       <NxtWatchContext.Consumer>
         {value => {
           const {darkTheme} = value
-          console.log(darkTheme)
           return (
-            <LeftNavBar>
+            <LeftNavbarContainer darkMode={darkTheme}>
               <LeftNavbarContentContainer>
                 <LeftNavbarMenuContainer>
-                  {leftNavbarMenuItemsList.map(eachItem => (
+                  {LeftMenuItemsList.map(eachItem => (
                     <MenuButtonItem
                       details={eachItem}
                       key={eachItem.menuId}
-                      isActive={
-                        eachItem.menuId === activeLeftNavbarMenuButtonId
-                      }
+                      isActive={eachItem.menuId === activeLeftMenuButtonId}
                       changeActiveMenuButton={this.changeActiveMenuButton}
                     />
                   ))}
                 </LeftNavbarMenuContainer>
               </LeftNavbarContentContainer>
-            </LeftNavBar>
+            </LeftNavbarContainer>
           )
         }}
       </NxtWatchContext.Consumer>
